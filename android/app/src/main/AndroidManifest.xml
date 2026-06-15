@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TravelBuddy"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_SqOZwDnHPrqJm0" />
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.TravelBuddy">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".OnboardingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".SignupActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".MyTripsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".TripDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".TripPlannerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TicketBookingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HotelBookingActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".HotelDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+
+        <activity
+            android:name=".BudgetPlanningActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WeatherDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatBuddyActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".PackingListActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".BudgetTrackerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".CommunityActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".AlertsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".ForgotActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".ProfileActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".MyInfoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".JoinRequestsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+        <activity
+            android:name=".HelpSupportActivity"
+            android:exported="false"
+            android:theme="@style/Theme.TravelBuddy" />
+    </application>
+
+</manifest>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="splash_start">#2563EB</color>
+    <color name="splash_end">#2DD4BF</color>
+    <color name="brand_white">#F8F9FA</color>
+    <color name="onboarding_bg">#1A232E</color>
+    <color name="onboarding_indicator_inactive">#4A5568</color>
+    <color name="onboarding_blue">#2563EB</color>
+    <color name="input_bg">#242F3E</color>
+    <color name="input_hint">#718096</color>
+    <color name="link_blue">#3B82F6</color>
+</resources>

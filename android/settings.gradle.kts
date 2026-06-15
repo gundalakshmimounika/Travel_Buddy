@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "TravelBuddy"
 include(":app")
- 
+include(":app")

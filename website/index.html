@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    window.errorsLog = [];
+    window.onerror = function(message, source, lineno, colno, error) {
+      window.errorsLog.push(message + " at " + source + ":" + lineno + ":" + colno);
+      return false;
+    };
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TravelBuddy - Plan smarter. Travel easier.">
+  <title>TravelBuddy</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css?v=2.5.0">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. Splash Screen
+       ========================================================================== -->
+  <div id="splash-screen">
+    <!-- Premium Squircle Container for Logo -->
+    <div class="logo-container" id="logo-container-id">
+      <img src="assets/ic_app_logo.png" class="logo-image" alt="TravelBuddy Logo" id="logo-img-id">
+    </div>
+    
+    <!-- Branding Text -->
+    <h1 class="app-name" id="app-name-id">TravelBuddy</h1>
+    <p class="tagline" id="tagline-id">Plan smarter. Travel easier.</p>
+  </div>
+
+  <!-- ==========================================================================
+       2. Main Application Container (Login Portal)
+       ========================================================================== -->
+  <!-- ==========================================================================
+       2. Main Application Container (Login Portal & Dashboard)
+       ========================================================================== -->
+  <main id="main-app" aria-label="Main Application">
+    
+    <!-- 2A. Login Section -->
+    <section id="login-section" class="login-card visible">
+      
+      <!-- Small Squircle Logo -->
+      <div class="small-logo" id="small-logo-id">
+        <img src="assets/ic_app_logo.png" alt="TravelBuddy Logo">
+      </div>
+
+      <!-- Welcome Headings -->
+      <h2 class="welcome-title" id="welcome-title-id">Welcome Back</h2>
+      <p class="welcome-subtitle" id="welcome-subtitle-id">Sign in to continue your journey</p>
+
+      <!-- Interactive Form -->
+      <form id="login-form" class="login-form">
+        
+        <!-- Email Input -->
+        <div class="form-group">
+          <label class="form-label" for="email" id="email-label-id">Email</label>
+          <div class="input-container" id="email-container-id">
+            <span class="input-icon" aria-hidden="true">
+              <!-- Crisp Inline Mail SVG Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <input 
+              class="input-field" 
+              type="email" 
+              id="email" 
+              placeholder="your@email.com" 
+              required 
+              autocomplete="email"
+            >
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+          <label class="form-label" for="password" id="password-label-id">Password</label>
+          <div class="input-container" id="password-container-id">
+            <span class="input-icon" aria-hidden="true">
+              <!-- Crisp Inline Lock SVG Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input 
+              class="input-field" 
+              type="password" 
+              id="password" 
+              placeholder="........" 
+              required 
+              autocomplete="current-password"
+            >
+          </div>
+        </div>
+
+        <!-- Forgot Password Link -->
+        <a href="#" class="forgot-password" id="forgot-password-id">Forgot Password?</a>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit" id="btn-signin-id">Sign In</button>
+      </form>
+
+      <!-- Footer/Navigation Links -->
+      <p class="login-footer" id="login-footer-id">
+        Don't have an account? 
+        <a href="#" class="signup-link" id="signup-link-id">Sign Up</a>
+      </p>
+
+    </section>
+
+    <!-- 2A-2. Signup Section -->
+    <section id="signup-section" class="login-card hidden">
+      
+      <!-- Small Squircle Logo -->
+      <div class="small-logo">
+        <img src="assets/ic_app_logo.png" alt="TravelBuddy Logo">
+      </div>
+
+      <!-- Welcome Headings -->
+      <h2 class="welcome-title">Create Account</h2>
+      <p class="welcome-subtitle">Start your travel journey today</p>
+
+      <!-- Interactive Form -->
+      <form id="signup-form" class="login-form">
+        
+        <!-- Full Name Input -->
+        <div class="form-group">
+          <label class="form-label" for="signup-fullname">Full Name</label>
+          <div class="input-container">
+            <span class="input-icon" aria-hidden="true">
+              <!-- Crisp Inline User SVG Icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+            </span>
+            <input 
+              class="input-field" 
+              type="text" 
+              id="signup-fullname" 
+              placeholder="Enter your full name" 
+              required 
+              autocomplete="name"
+            >
+          </div>
+        </div>
+
+        <!-- Email Input -->
+        <div class="form-group">
+          <label class="form-label" for="signup-email">Email</label>
+          <div class="input-container">
+            <span class="input-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </span>
+            <input 
+              class="input-field" 
+              type="email" 
+              id="signup-email" 
+              placeholder="your@email.com" 
+              required 
+              autocomplete="email"
+            >
+          </div>
+        </div>
+
+        <!-- Password Input -->
+        <div class="form-group">
+          <label class="form-label" for="signup-password">Password</label>
+          <div class="input-container">
+            <span class="input-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </span>
+            <input 
+              class="input-field" 
+              type="password" 
+              id="signup-password" 
+              placeholder="........" 
+              required 
+              autocomplete="new-password"
+            >
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit" style="margin-top: 15px;">Create Account</button>
+      </form>
+
+      <!-- Footer/Navigation Links -->
+      <p class="login-footer">
+        Already have an account? 
+        <a href="#" class="signup-link" id="signin-link-id">Sign In</a>
+      </p>
+
+    </section>
+
+    <!-- 2B. Dashboard Section -->
+    <section id="dashboard-section" class="dashboard-card hidden">
+      
+      <!-- Dashboard Top Header -->
+      <header class="db-header">
+        <div class="header-info">
+          <h1 class="db-title">Trip Buddy</h1>
+          <p class="db-subtitle">Ready for your next adventure?</p>
+        </div>
+        <!-- Profile / Community Circular Button -->
+        <button class="btn-community" id="cvCommunity" aria-label="Community Feed">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+            <circle cx="9" cy="7" r="4"></circle>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+          </svg>
+        </button>
+      </header>
+
+      <!-- Search Bar -->
+      <div class="db-search-bar" id="llSearchBar">
+        <span class="search-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+        <input type="text" class="search-input" id="search-input-id" placeholder="Search destinations...">
+      </div>
+
+      <!-- Scrollable Dashboard Content -->
+      <div class="db-content" id="home-tab-content">
+        
+        <!-- Interactive Live Map Card -->
+        <div class="card card-map" id="cvUpcomingTrip">
+          <!-- Translucent "Live" pill badge -->
+          <div class="badge-live">
+            <span class="pulse-dot"></span>
+            Live
+          </div>
+          
+          <!-- Embedded Live Map Container -->
+          <div class="map-embed-container">
+            <iframe 
+              id="live-map-iframe"
+              src="https://maps.google.com/maps?q=Nellore,India&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+
+          <!-- Glassmorphic Map Info Overlay -->
+          <div class="map-info-overlay">
+            <div class="map-info-left">
+              <h3 id="tvUpcomingTitle">Nellore</h3>
+              <p id="tvUpcomingDates">Current: India</p>
+            </div>
+            <div class="map-info-badge">
+              <span>Route Summary</span>
+              <p>Active Location</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Weather Card (integrated with weather.php) -->
+        <div class="card card-weather" id="cvWeatherCard">
+          <div class="weather-summary">
+            <div class="weather-text">
+              <h3 id="tvWeatherLocation">Weather in Nellore</h3>
+              <p id="weather-condition">Partly Cloudy</p>
+            </div>
+            <div class="weather-temp-container">
+              <span class="weather-temp" id="weather-temp">28°C</span>
+            </div>
+          </div>
+          
+          <!-- Detailed Forecast Panel (Initially Collapsed, Expanded on click) -->
+          <div class="weather-details collapsed" id="weather-details-id">
+            <div class="forecast-section">
+              <h4>Hourly Forecast</h4>
+              <div class="hourly-forecast-grid" id="hourly-forecast-id">
+                <!-- Injected Dynamically by JS -->
+              </div>
+            </div>
+            <div class="forecast-section">
+              <h4>7-Day Forecast</h4>
+              <div class="daily-forecast-list" id="daily-forecast-id">
+                <!-- Injected Dynamically by JS -->
+              </div>
+            </div>
+          </div>
+          
+          <!-- Toggle Button -->
+          <button class="btn-weather-toggle" id="btn-weather-toggle-id" aria-expanded="false" aria-label="Toggle Forecast View">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Ask Travel Buddy AI Card -->
+        <div class="card card-ai" id="cvAskBuddy">
+          <div class="ai-icon-container">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <path d="M11 7v8M8 11h6"></path>
+            </svg>
+          </div>
+          <div class="ai-text">
+            <h3>Ask Travel Buddy</h3>
+            <p>AI-powered travel advice</p>
+          </div>
+          <div class="ai-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="1"></circle>
+              <circle cx="19" cy="12" r="1"></circle>
+              <circle cx="5" cy="12" r="1"></circle>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scrollable Dashboard Content (Trips Tab) -->
+      <div class="db-content hidden" id="trips-tab-content">
+        <!-- Trips Header Area -->
+        <div class="trips-header-wrapper">
+          <div class="trips-header-info">
+            <h2 class="trips-tab-title">My Trips</h2>
+            <p class="trips-tab-subtitle">Plan and manage your adventures</p>
+          </div>
+          <!-- Premium Floating Action Plus Button in Header -->
+          <button class="btn-add-trip-header" id="fabAddTrip" aria-label="Add Planned Trip">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="12" y1="5" x2="12" y2="19"></line>
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Planned Trips dynamic list -->
+        <div class="trips-list" id="trips-list-container">
+          <!-- Injected dynamically via JS -->
+        </div>
+      </div>
+
+      <!-- Scrollable Dashboard Content (Alerts Tab) -->
+      <div class="db-content hidden" id="alerts-tab-content">
+        <!-- Alerts Header Area -->
+        <div class="alerts-header-wrapper">
+          <div class="alerts-header-info">
+            <h2 class="alerts-tab-title">Notifications</h2>
+            <p class="alerts-tab-subtitle">Stay updated on your travel activities</p>
+          </div>
+          <button class="btn-clear-alerts" id="btnClearAllAlerts" aria-label="Clear All Notifications">Clear All</button>
+        </div>
+
+        <!-- Empty State for Alerts -->
+        <div class="empty-alerts-state" id="llEmptyStateAlerts">
+          <div class="empty-alerts-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </div>
+          <p>No notifications yet</p>
+          <span>Activity updates on your trips will appear here</span>
+        </div>
+
+        <!-- Alerts dynamic list -->
+        <div class="alerts-container-list" id="alerts-list-container">
+          <!-- Injected dynamically via JS -->
+        </div>
+      </div>
+
+      <!-- Scrollable Dashboard Content (Search Tab) -->
+      <div class="db-content hidden" id="search-tab-content">
+        <!-- Search Header Area -->
+        <div class="search-header-wrapper">
+          <h2 class="search-tab-title">Search</h2>
+          
+          <!-- Large Search Bar Input -->
+          <div class="search-tab-bar">
+            <span class="search-tab-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
+            <input type="text" class="search-tab-input" id="search-tab-input-id" placeholder="Where do you want to go?">
+          </div>
+        </div>
+
+        <!-- Trending Title -->
+        <div class="trending-section-header">
+          <span class="trending-title-icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+              <polyline points="17 6 23 6 23 12"></polyline>
+            </svg>
+          </span>
+          <h3 class="trending-subtitle">Trending Destinations</h3>
+        </div>
+
+        <!-- Dynamic Destination List Container -->
+        <div class="trending-destinations-list" id="trending-list-container">
+          <!-- Injected dynamically via JS -->
+        </div>
+      </div>
+
+      <!-- Scrollable Dashboard Content (Profile Tab) -->
+      <div class="db-content hidden" id="profile-tab-content">
+        <!-- Profile Header/Card Area -->
+        <div class="profile-card-header">
+          <div class="profile-avatar-large" id="profile-avatar-initials">AM</div>
+          <h2 class="profile-name" id="tvProfileName">Aarav Mehta</h2>
+          <p class="profile-email" id="tvProfileEmail">aarav.mehta@gmail.com</p>
+          <div class="profile-badge-tier">Premium Explorer</div>
+        </div>
+
+        <!-- Options List Group -->
+        <div class="profile-options-list">
+          
+          <button class="profile-option-item" id="btnMyInfo">
+            <div class="option-icon-wrapper info-bg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+            </div>
+            <div class="option-text-wrapper">
+              <span class="option-title">My Information</span>
+              <span class="option-subtitle">View and manage your account details</span>
+            </div>
+            <div class="option-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </button>
+
+          <button class="profile-option-item" id="btnProfileRequests">
+            <div class="option-icon-wrapper requests-bg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <div class="option-text-wrapper">
+              <span class="option-title">Join Requests</span>
+              <span class="option-subtitle">Check community trip requests</span>
+            </div>
+            <div class="option-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </button>
+
+          <button class="profile-option-item" id="btnPrivacyPolicy">
+            <div class="option-icon-wrapper privacy-bg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <div class="option-text-wrapper">
+              <span class="option-title">Privacy Policy</span>
+              <span class="option-subtitle">Read standard terms & conditions</span>
+            </div>
+            <div class="option-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </button>
+
+          <button class="profile-option-item" id="btnHelpSupport">
+            <div class="option-icon-wrapper support-bg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+            </div>
+            <div class="option-text-wrapper">
+              <span class="option-title">Help & Support</span>
+              <span class="option-subtitle">Contact custom support desk</span>
+            </div>
+            <div class="option-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </button>
+
+          <button class="profile-option-item logout-btn-item" id="btnLogOut">
+            <div class="option-icon-wrapper logout-bg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+            </div>
+            <div class="option-text-wrapper">
+              <span class="option-title">Log Out</span>
+              <span class="option-subtitle">End session and sign out safely</span>
+            </div>
+            <div class="option-arrow">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </div>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Sticky Bottom Navigation Bar -->
+      <nav class="bottom-nav" aria-label="Bottom Navigation">
+        <a href="#" class="nav-item active" id="navHome">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+          <span>Home</span>
+        </a>
+        <a href="#" class="nav-item" id="navTrips">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Trips</span>
+        </a>
+        <a href="#" class="nav-item" id="navSearch">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span>Search</span>
+        </a>
+        <a href="#" class="nav-item" id="navAlerts">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+          <span>Alerts</span>
+        </a>
+        <a href="#" class="nav-item" id="navProfile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Profile</span>
+        </a>
+      </nav>
+
+      <!-- Slide-Up AI Chat Drawer -->
+      <div class="chat-drawer" id="chat-drawer-id">
+        <header class="chat-header">
+          <div class="chat-header-title">
+            <div class="chat-avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <div>
+              <h3>Travel Buddy AI</h3>
+              <p class="status-indicator"><span class="status-dot"></span>Online</p>
+            </div>
+          </div>
+          <button class="btn-chat-close" id="btn-chat-close-id" aria-label="Close Chat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </header>
+        
+        <div class="chat-messages" id="chat-messages-id">
+          <div class="message ai">
+            <p>Hey traveler! 👋 I am **Travel Buddy AI**, your personal tour guide. Ask me anything about destinations, packing lists, budgeting, or itinerary ideas! Where are we heading next?</p>
+          </div>
+        </div>
+        
+        <form class="chat-input-area" id="chat-input-form">
+          <input type="text" class="chat-input" id="chat-input-field" placeholder="Ask Travel Buddy..." autocomplete="off">
+          <button type="submit" class="btn-chat-send" id="btn-chat-send-id" aria-label="Send Message">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="22" y1="2" x2="11" y2="13"></line>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+            </svg>
+          </button>
+        </form>
+      </div>
+      <div class="chat-overlay" id="chat-overlay-id"></div>
+
+    </section>
+
+    <!-- 2BA. Profile Screen: My Information Screen -->
+    <section id="profile-info-section" class="profile-details-card hidden">
+      <header class="section-toolbar">
+        <button class="btn-toolbar-back" id="btn-info-back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <h2 class="toolbar-title">My Information</h2>
+      </header>
+
+      <div class="screen-scrollable-content">
+        <div class="profile-avatar-large-container">
+          <div class="profile-avatar-large" id="info-screen-avatar">S</div>
+        </div>
+        <h3 class="info-personal-title">Personal Details</h3>
+        <p class="info-personal-subtitle">Manage your active profile information</p>
+
+        <div class="info-fields-card">
+          <div class="info-field-row">
+            <span class="info-field-label">Full Name</span>
+            <span class="info-field-value" id="info-screen-name">simats</span>
+          </div>
+          <div class="info-field-row">
+            <span class="info-field-label">Email Address</span>
+            <span class="info-field-value" id="info-screen-email">simats@gmail.com</span>
+          </div>
+        </div>
+
+        <button class="btn-action-primary" id="btnResetPassword">Reset Password</button>
+      </div>
+    </section>
+
+    <!-- 2BB. Profile Screen: Join Requests Screen -->
+    <section id="profile-requests-section" class="profile-details-card hidden">
+      <header class="section-toolbar">
+        <button class="btn-toolbar-back" id="btn-requests-back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <h2 class="toolbar-title">Join Requests</h2>
+      </header>
+
+      <div class="screen-scrollable-content">
+        <h3 class="info-personal-title">Pending Travelers</h3>
+        <p class="info-personal-subtitle">Click an email address to compose an email inquiry</p>
+
+        <div class="requests-list-container" id="screen-requests-container">
+          <!-- Will be dynamically populated or show empty state -->
+          <div class="empty-requests-container">
+            <p class="empty-requests-text">No pending join requests</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2BC. Profile Screen: Privacy & Policy Screen -->
+    <section id="profile-privacy-section" class="profile-details-card hidden">
+      <header class="section-toolbar">
+        <button class="btn-toolbar-back" id="btn-privacy-back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <h2 class="toolbar-title">Privacy & Policy</h2>
+      </header>
+
+      <div class="screen-scrollable-content">
+        <h3 class="info-personal-title">TravelBuddy Privacy Guidelines</h3>
+        <p class="info-personal-subtitle" style="margin-bottom: 24px;">Last Updated: May 2026</p>
+
+        <div class="privacy-sections-list">
+          <div class="privacy-section-block">
+            <h4 class="privacy-block-title">1. Information We Collect</h4>
+            <p class="privacy-block-text">We collect account credentials (your full name, email, and password) directly to configure and personalize your TravelBuddy experiences. GPS location data is accessed securely in real-time only to provide custom local weather, upcoming trip statuses, and nearby map coordinates.</p>
+          </div>
+
+          <div class="privacy-section-block">
+            <h4 class="privacy-block-title">2. AI Assistant & Chat Data</h4>
+            <p class="privacy-block-text">Any conversations or inquiries with our Chat AI companion are handled dynamically on encrypted database records. We analyze user input strictly to curate smart, high-quality answers and recommendations, ensuring your conversations are never shared with advertising entities.</p>
+          </div>
+
+          <div class="privacy-section-block">
+            <h4 class="privacy-block-title">3. Database & Local Protection</h4>
+            <p class="privacy-block-text">All user accounts, password updates, session states are securely registered in our SQL tables on our backend. We utilize advanced validation patterns on emails and passwords to ensure account integrity, keeping your personal credentials completely isolated and private.</p>
+          </div>
+
+          <div class="privacy-section-block">
+            <h4 class="privacy-block-title">4. Razorpay Secure Gateways</h4>
+            <p class="privacy-block-text">All payment bookings, tickets, and financial transactions are routed directly via official SDK integrations (e.g. Razorpay). TravelBuddy does not store your credit card or CVV details, maintaining a 100% compliance record with secure payment guidelines.</p>
+          </div>
+
+          <div class="privacy-section-block">
+            <h4 class="privacy-block-title">5. Contact & Compliance</h4>
+            <p class="privacy-block-text">TravelBuddy reserves the right to modify these guidelines to align with Google Play and secure framework policies. For any inquiries regarding location usage or data deletion options, please navigate to our Help & Support section.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2BD. Profile Screen: Help & Support Screen -->
+    <section id="profile-support-section" class="profile-details-card hidden">
+      <header class="section-toolbar">
+        <button class="btn-toolbar-back" id="btn-support-back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <h2 class="toolbar-title">Help & Support</h2>
+      </header>
+
+      <div class="screen-scrollable-content">
+        <h3 class="info-personal-title">Frequently Asked Questions</h3>
+        <p class="info-personal-subtitle" style="margin-bottom: 20px;">Find quick answers to common issues</p>
+
+        <div class="faq-cards-list">
+          <div class="faq-card">
+            <h4 class="faq-card-question">How do I plan a new trip?</h4>
+            <p class="faq-card-answer">Go to the Trips section in the bottom search layout or explore hot tourist spots inside the TravelBuddy community forum to add custom destinations.</p>
+          </div>
+
+          <div class="faq-card">
+            <h4 class="faq-card-question">Is the AI Chat Buddy free?</h4>
+            <p class="faq-card-answer">Yes! Your smart Chat Companion is 100% free and ready 24/7 to draft personalized schedules, forecast packing requirements, and look up weather indices.</p>
+          </div>
+
+          <div class="faq-card">
+            <h4 class="faq-card-question">How do I configure my packing list?</h4>
+            <p class="faq-card-answer">Tap your active destination card, open the Packing checklist, add custom items, check items as you pack, or ask TravelBuddy AI to draft a smart default list based on your destination!</p>
+          </div>
+        </div>
+
+        <div class="assistance-cta-block">
+          <h4 class="assistance-cta-title">Still need assistance?</h4>
+          <p class="assistance-cta-text">If your query isn't listed, feel free to contact our support desk directly. We will get back to you as soon as possible!</p>
+        </div>
+
+        <button class="btn-action-primary" id="btnContactUs">Contact Us</button>
+      </div>
+    </section>
+
+    <!-- 2C. Trip Buddies (Community) Section -->
+    <section id="community-section" class="community-card hidden">
+      
+      <!-- Community Header -->
+      <header class="comm-header">
+        <button class="btn-comm-back" id="btn-comm-back-id" aria-label="Go Back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <h1 class="comm-title">Trip Buddies</h1>
+        <!-- Glowing plus button to post a travel plan -->
+        <button class="btn-comm-post" id="fabCreatePost" aria-label="Share Travel Plan">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </header>
+
+      <!-- Quick Switcher Tabs -->
+      <div class="comm-tabs">
+        <button class="comm-tab active" id="tab-explore">Explore Feed</button>
+        <button class="comm-tab" id="tab-requests">Join Requests</button>
+      </div>
+
+      <!-- Search Bar inside Community -->
+      <div class="comm-search-bar" id="comm-search-bar-id">
+        <span class="search-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </span>
+        <input type="text" class="search-input" id="comm-search-input" placeholder="Filter by destination...">
+      </div>
+
+      <!-- Scrollable Community Content Panel -->
+      <div class="comm-content">
+        
+        <!-- Tab 1: Explore Feed List -->
+        <div class="posts-list-view visible" id="explore-feed-view">
+          <div class="feed-posts" id="community-posts-list">
+            <!-- Dynamically loaded via Ajax -->
+          </div>
+        </div>
+
+        <!-- Tab 2: Received Requests List -->
+        <div class="requests-list-view hidden" id="join-requests-view">
+          <div class="requests-feed" id="join-requests-list">
+            <!-- Dynamically loaded via Ajax -->
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ==========================================================================
+         2D. Trip Details Section
+         ========================================================================== -->
+    <section id="trip-details-section" class="trip-details-card hidden">
+      <!-- Custom Toolbar -->
+      <header class="details-header">
+        <button class="btn-details-back" id="btn-details-back-id" aria-label="Go Back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <h1 class="details-header-title">Trip Details</h1>
+        <button class="btn-details-menu" aria-label="Menu Options">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="1.5"></circle>
+            <circle cx="12" cy="5" r="1.5"></circle>
+            <circle cx="12" cy="19" r="1.5"></circle>
+          </svg>
+        </button>
+      </header>
+
+      <!-- Scrollable Trip Details Content -->
+      <div class="details-scroll-content">
+        <!-- Hero Header -->
+        <div class="details-hero">
+          <img id="details-hero-img" src="" alt="Destination View">
+          <div class="details-hero-overlay"></div>
+          <h2 id="details-destination-title" class="details-hero-title">Destination</h2>
+        </div>
+
+        <!-- Trip Planning Section -->
+        <div class="details-section-wrapper">
+          <h3 class="details-section-title">Trip Planning</h3>
+          <div class="planning-grid">
+            <div class="planning-card-item" id="btn-pack-list">
+              <div class="planning-squircle packing-bg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <span class="planning-label">Packing</span>
+            </div>
+            <div class="planning-card-item" id="btn-ticket-list">
+              <div class="planning-squircle tickets-bg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                  <line x1="2" y1="10" x2="22" y2="10"></line>
+                  <line x1="6" y1="14" x2="6" y2="16"></line>
+                  <line x1="10" y1="14" x2="10" y2="16"></line>
+                  <line x1="14" y1="14" x2="14" y2="16"></line>
+                </svg>
+              </div>
+              <span class="planning-label">Tickets</span>
+            </div>
+            <div class="planning-card-item" id="btn-hotel-list">
+              <div class="planning-squircle hotels-bg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 21v-4a7 7 0 0 1 14 0v4"></path>
+                  <rect x="5" y="5" width="14" height="12" rx="2" ry="2"></rect>
+                  <path d="M9 22V12h6v10"></path>
+                </svg>
+              </div>
+              <span class="planning-label">Hotels</span>
+            </div>
+            <div class="planning-card-item" id="btn-budget-list">
+              <div class="planning-squircle budget-bg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2" ry="2"></rect>
+                  <line x1="12" y1="1" x2="12" y2="23"></line>
+                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                </svg>
+              </div>
+              <span class="planning-label">Budget</span>
+            </div>
+            <div class="planning-card-item" id="btn-weather-list">
+              <div class="planning-squircle weather-bg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+              </div>
+              <span class="planning-label">Weather</span>
+            </div>
+            <div class="planning-card-item" id="btn-buddy-plan">
+              <div class="planning-squircle buddy-bg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+              </div>
+              <span class="planning-label">Plan Buddy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Destination Section -->
+        <div class="details-section-wrapper">
+          <h3 class="details-section-title">About Destination</h3>
+          <div class="details-rating-badge">
+            <span id="details-rating-num" class="rating-badge-pill">4.5</span>
+            <span class="rating-badge-label">Official Rating</span>
+          </div>
+          <p id="details-description" class="details-paragraph">Loading destination details...</p>
+          <button id="btn-details-route" class="btn-route-maps">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"></path>
+              <circle cx="12" cy="10" r="3"></circle>
+            </svg>
+            <span>Get Route (Google Maps)</span>
+          </button>
+        </div>
+
+        <!-- Recommended Places Section -->
+        <div class="details-section-wrapper">
+          <h3 class="details-section-title">Recommended Places</h3>
+          <div class="horizontal-scroll-container" id="details-recommended-places">
+            <!-- Dynamically populated attraction cards -->
+          </div>
+        </div>
+
+        <!-- Best Hotels Nearby Section -->
+        <div class="details-section-wrapper">
+          <h3 class="details-section-title">Best Hotels Nearby</h3>
+          <ul class="details-hotels-list" id="details-hotels-list-id">
+            <!-- Dynamic hotels list -->
+          </ul>
+        </div>
+
+        <!-- How to Travel Section -->
+        <div class="details-section-wrapper">
+          <h3 class="details-section-title">How to Travel</h3>
+          <p id="details-travel-methods" class="details-paragraph">Finding best transport options...</p>
+        </div>
+
+        <!-- Estimated Budget Section -->
+        <div class="details-section-wrapper">
+          <h3 class="details-section-title">Estimated Budget (Daily)</h3>
+          <div class="details-budget-row">
+            <span id="details-budget-min" class="budget-min-val">Min: ₹--</span>
+            <span id="details-budget-max" class="budget-max-val">Max: ₹--</span>
+          </div>
+        </div>
+
+        <!-- Delete Trip Action -->
+        <div class="details-delete-wrapper">
+          <button id="btn-details-delete-trip" class="btn-delete-full">Delete from My Trips</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         PACKING LIST – Full Screen Page (replaces old overlay)
+         ========================================================= -->
+    <section id="packing-section" class="fullscreen-planning-page hidden">
+
+      <!-- Toolbar -->
+      <header class="fsp-toolbar">
+        <button class="fsp-back-btn" id="btn-packing-back" aria-label="Go Back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </button>
+        <h1 class="fsp-title">Packing List</h1>
+        <div class="fsp-toolbar-spacer"></div>
+      </header>
+
+      <!-- Scrollable Body -->
+      <div class="fsp-body" id="packing-fsp-body">
+
+        <!-- Progress Summary Card -->
+        <div class="packing-progress-card">
+          <div class="packing-progress-text">
+            <h2 class="packing-destination-name" id="packing-dest-title">Destination</h2>
+            <p class="packing-progress-label" id="packing-progress-label">0 of 0 items packed</p>
+          </div>
+          <!-- SVG Circular Progress Ring -->
+          <div class="packing-ring-wrapper">
+            <svg class="packing-ring" width="72" height="72" viewBox="0 0 72 72">
+              <circle class="packing-ring-bg" cx="36" cy="36" r="28" />
+              <circle class="packing-ring-fill" id="packing-ring-fill" cx="36" cy="36" r="28"
+                stroke-dasharray="175.93"
+                stroke-dashoffset="175.93" />
+            </svg>
+            <span class="packing-ring-pct" id="packing-ring-pct">0%</span>
+          </div>
+        </div>
+
+        <!-- Items List -->
+        <div class="packing-items-list" id="packing-items-list">
+          <!-- Dynamically populated -->
+        </div>
+
+      </div>
+
+      <!-- Sticky Bottom – Add Item Bar -->
+      <div class="packing-add-bar">
+        <select class="packing-cat-select" id="packing-cat-select">
+          <option value="Clothes">👕 Clothes</option>
+          <option value="Documents">📄 Documents</option>
+          <option value="Gadgets">🔌 Gadgets</option>
+          <option value="General">📦 General</option>
+        </select>
+        <input type="text" class="packing-add-input" id="packing-add-input" placeholder="Add custom item..." autocomplete="off">
+        <button class="packing-add-btn" id="packing-add-btn" aria-label="Add Item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+        </button>
+      </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         TICKET BOOKING – Full Screen Page
+         ========================================================= -->
+    <section id="tickets-section" class="fullscreen-planning-page hidden">
+
+      <!-- Toolbar -->
+      <header class="fsp-toolbar">
+        <button class="fsp-back-btn" id="btn-tickets-back" aria-label="Go Back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+        <h1 class="fsp-title" id="tickets-page-title">Tickets</h1>
+        <div class="fsp-toolbar-spacer"></div>
+      </header>
+
+      <!-- Scrollable Body -->
+      <div class="fsp-body">
+        <!-- From label -->
+        <p class="tickets-from-label" id="tickets-from-label">From: Chennai, India</p>
+
+        <!-- Transport Cards List -->
+        <div class="tickets-transport-list" id="tickets-transport-list">
+          <div class="ticket-loading-state"><div class="dot-pulse"></div></div>
+        </div>
+      </div>
+
+      <!-- Booking Bottom Sheet -->
+      <div class="ticket-booking-sheet hidden" id="ticket-booking-sheet">
+        <div class="ticket-sheet-handle"></div>
+        <h2 class="ticket-sheet-title" id="ticket-sheet-title">Book Bus Ticket</h2>
+        <p class="ticket-sheet-sub">Enter booking details below</p>
+
+        <!-- Date of Departure -->
+        <div class="ticket-field-group">
+          <label class="ticket-field-label">Date of Departure</label>
+          <div class="ticket-date-wrapper">
+            <input type="date" class="ticket-date-input" id="ticket-date-input">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          </div>
+        </div>
+
+        <!-- Number of Seats -->
+        <div class="ticket-field-group">
+          <label class="ticket-field-label">Number of Seats</label>
+          <div class="ticket-seat-counter">
+            <button class="ticket-seat-btn" id="ticket-seat-minus">-</button>
+            <span class="ticket-seat-count" id="ticket-seat-count">1</span>
+            <button class="ticket-seat-btn" id="ticket-seat-plus">+</button>
+          </div>
+        </div>
+
+        <!-- Seat Class -->
+        <div class="ticket-field-group">
+          <label class="ticket-field-label">Seat Class</label>
+          <div class="ticket-class-row">
+            <label class="ticket-radio-label">
+              <input type="radio" name="ticket-class" value="standard" checked> Standard
+            </label>
+            <label class="ticket-radio-label">
+              <input type="radio" name="ticket-class" value="premium"> Premium
+            </label>
+          </div>
+        </div>
+
+        <!-- Footer: Total + Pay Button -->
+        <div class="ticket-sheet-footer">
+          <div class="ticket-total-wrap">
+            <span class="ticket-total-lbl">Total Amount</span>
+            <span class="ticket-total-amt" id="ticket-total-amt">₹0</span>
+          </div>
+          <button class="ticket-pay-btn" id="ticket-pay-btn">Proceed to Pay</button>
+        </div>
+      </div>
+
+      <!-- Sheet Backdrop -->
+      <div class="ticket-sheet-backdrop hidden" id="ticket-sheet-backdrop"></div>
+
+    </section>
+
+
+
+    <!-- 3. Hotels Overlay -->
+    <div class="planning-overlay hidden" id="hotels-overlay">
+      <div class="overlay-sheet">
+        <header class="overlay-header">
+          <div class="overlay-header-title">
+            <div class="overlay-icon-badge hotels-bg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21v-4a7 7 0 0 1 14 0v4"></path>
+                <rect x="5" y="5" width="14" height="12" rx="2" ry="2"></rect>
+              </svg>
+            </div>
+            <h3>Nearby Hotels</h3>
+          </div>
+          <button class="btn-overlay-close" id="btn-hotels-close">&times;</button>
+        </header>
+        <div class="overlay-body">
+          <div class="hotels-list" id="hotels-overlay-list">
+            <!-- Hotels injected here -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         BUDGET TRACKER – Full Screen Page
+         ========================================================= -->
+    <section id="budget-section" class="fullscreen-planning-page hidden">
+      <header class="fsp-toolbar">
+        <button class="fsp-back-btn" id="btn-budget-back" aria-label="Go Back">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        </button>
+        <h1 class="fsp-title">Budget Tracker</h1>
+        <div class="fsp-toolbar-spacer"></div>
+      </header>
+      <div class="fsp-body">
+        <div class="budget-summary-card-fs">
+          <div class="budget-card-row-top">
+            <span class="budget-lbl-sm">Total Spent</span>
+            <span class="budget-limit-lbl" id="bfs-budget-label">Budget: ₹0</span>
+          </div>
+          <div class="budget-card-row-mid">
+            <span class="budget-spent-big" id="bfs-spent-big">₹0</span>
+            <button class="budget-edit-btn" id="bfs-edit-btn" aria-label="Edit Budget">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+            </button>
+          </div>
+          <div class="budget-bar-track"><div class="budget-bar-fill" id="bfs-bar-fill" style="width:0%"></div></div>
+          <div class="budget-card-row-bot">
+            <span class="budget-pct-lbl" id="bfs-pct-lbl">0% used</span>
+            <span class="budget-left-lbl" id="bfs-left-lbl">₹0 left</span>
+          </div>
+        </div>
+        <div class="budget-expenses-header">
+          <h2 class="budget-expenses-title">Recent Expenses</h2>
+          <button class="budget-add-link-btn" id="bfs-add-btn">ADD</button>
+        </div>
+        <div class="budget-expenses-list" id="bfs-expenses-list"></div>
+      </div>
+      <!-- Set Budget Modal -->
+      <div class="budget-modal-overlay hidden" id="bfs-limit-modal">
+        <div class="budget-modal-sheet">
+          <h3 class="budget-modal-title">Set Budget</h3>
+          <p class="budget-modal-sub">Enter your total budget for this trip</p>
+          <input type="number" class="budget-modal-input" id="bfs-limit-input" placeholder="e.g. 5000" min="0" step="any">
+          <div class="budget-modal-actions">
+            <button class="budget-modal-cancel" id="bfs-limit-cancel">Cancel</button>
+            <button class="budget-modal-save" id="bfs-limit-save">Save</button>
+          </div>
+        </div>
+      </div>
+      <!-- Add Expense Modal -->
+      <div class="budget-modal-overlay hidden" id="bfs-expense-modal">
+        <div class="budget-modal-sheet">
+          <h3 class="budget-modal-title">Add Expense</h3>
+          <input type="text" class="budget-modal-input" id="bfs-exp-note" placeholder="Description (e.g. Dinner)" style="margin-bottom:12px">
+          <input type="number" class="budget-modal-input" id="bfs-exp-amount" placeholder="Amount (₹)" min="0" step="any">
+          <div class="budget-modal-actions">
+            <button class="budget-modal-cancel" id="bfs-exp-cancel">Cancel</button>
+            <button class="budget-modal-save" id="bfs-exp-save">Add</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- 5. Weather Overlay -->
+    <div class="planning-overlay hidden" id="weather-overlay">
+      <div class="overlay-sheet">
+        <header class="overlay-header">
+          <div class="overlay-header-title">
+            <div class="overlay-icon-badge weather-bg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5"></circle>
+              </svg>
+            </div>
+            <h3>Weather Details</h3>
+          </div>
+          <button class="btn-overlay-close" id="btn-weather-close">&times;</button>
+        </header>
+        <div class="overlay-body">
+          <div class="weather-overlay-current">
+            <h4 id="weather-overlay-condition">Loading...</h4>
+            <span id="weather-overlay-temp" class="weather-large-temp">--°C</span>
+          </div>
+          <div class="weather-forecast-block">
+            <h4>Hourly Details</h4>
+            <div class="hourly-forecast-grid" id="weather-overlay-hourly"></div>
+          </div>
+          <div class="weather-forecast-block">
+            <h4>7-Day Extended Forecast</h4>
+            <div class="daily-forecast-list" id="weather-overlay-daily"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Plan with Buddy Overlay (shares trip to Trip Buddies community) -->
+    <div class="planning-overlay hidden" id="buddy-plan-overlay">
+      <div class="overlay-sheet">
+        <header class="overlay-header">
+          <div class="overlay-header-title">
+            <div class="overlay-icon-badge buddy-bg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3>Plan with Buddy</h3>
+          </div>
+          <button class="btn-overlay-close" id="btn-buddy-plan-close">&times;</button>
+        </header>
+        <div class="overlay-body">
+          <p style="color: var(--text-secondary); font-size: 14px; margin: 0 0 16px 0; line-height: 1.5;">
+            Share this trip to the <strong style="color: #8B5CF6;">Trip Buddies</strong> community feed and find travel companions who want to join you!
+          </p>
+          <form id="buddy-plan-form">
+            <div class="form-group" style="margin-bottom: 14px;">
+              <label class="form-label" for="buddy-plan-destination" style="font-size: 13px; color: var(--text-secondary); display: block; margin-bottom: 6px;">Destination</label>
+              <input type="text" class="modal-input" id="buddy-plan-destination" placeholder="e.g. Goa, India" required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: var(--text-primary); font-size: 14px; outline: none; box-sizing: border-box;">
+            </div>
+            <div class="form-group" style="margin-bottom: 14px;">
+              <label class="form-label" for="buddy-plan-dates" style="font-size: 13px; color: var(--text-secondary); display: block; margin-bottom: 6px;">Travel Dates</label>
+              <input type="text" class="modal-input" id="buddy-plan-dates" placeholder="e.g. Jun 10 - Jun 15" style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: var(--text-primary); font-size: 14px; outline: none; box-sizing: border-box;">
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+              <label class="form-label" for="buddy-plan-desc" style="font-size: 13px; color: var(--text-secondary); display: block; margin-bottom: 6px;">Trip Description</label>
+              <textarea class="modal-textarea" id="buddy-plan-desc" rows="3" placeholder="Describe your trip plan, route, budget expectations, or what kind of travel buddy you're looking for..." required style="width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; color: var(--text-primary); font-size: 14px; outline: none; resize: none; box-sizing: border-box;"></textarea>
+            </div>
+            <button type="submit" class="btn-modal-submit" id="btn-buddy-plan-submit" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #7C3AED, #8B5CF6); border: none; border-radius: 14px; color: #fff; font-size: 15px; font-weight: 700; cursor: pointer; letter-spacing: 0.3px;">
+              Share to Trip Buddies
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Create Post Modal Dialog Sheets -->
+    <div class="modal-overlay hidden" id="create-post-modal">
+      <div class="modal-sheet">
+        <header class="modal-header">
+          <h3>Share Travel Plan</h3>
+          <button class="btn-modal-close" id="btn-modal-close-id" aria-label="Close dialog">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </header>
+        <form class="modal-form" id="create-post-form">
+          <div class="form-group">
+            <label class="form-label" for="comm-destination">Destination</label>
+            <input type="text" class="modal-input" id="comm-destination" placeholder="e.g. Goa, India" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="comm-dates">Dates</label>
+            <input type="text" class="modal-input" id="comm-dates" placeholder="e.g. Dec 01 - Dec 05" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="comm-description">Description</label>
+            <textarea class="modal-textarea" id="comm-description" rows="3" placeholder="Tell travel buddies about your plan, route, or budget expectations..." required></textarea>
+          </div>
+          <button type="submit" class="btn-modal-submit" id="btn-modal-submit-id">Share Plan</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Add Planned Trip Modal Dialog -->
+    <div class="modal-overlay hidden" id="add-trip-modal">
+      <div class="modal-sheet">
+        <header class="modal-header">
+          <h3>Plan a New Trip</h3>
+          <button class="btn-modal-close" id="btn-add-trip-close-id" aria-label="Close dialog">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </header>
+        <form class="modal-form" id="add-trip-form">
+          <div class="form-group">
+            <label class="form-label" for="trip-destination">Destination</label>
+            <input type="text" class="modal-input" id="trip-destination" placeholder="e.g. Mahabalipuram, India" required>
+          </div>
+          <button type="submit" class="btn-modal-submit" id="btn-add-trip-submit-id">Add Trip</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 1. My Information Dialog Modal -->
+    <div class="modal-overlay hidden" id="info-modal">
+      <div class="modal-sheet">
+        <header class="modal-header">
+          <h3>My Information</h3>
+          <button class="btn-modal-close" id="btn-info-close" aria-label="Close dialog">&times;</button>
+        </header>
+        <div class="modal-profile-info-body">
+          <div class="info-group-view">
+            <span class="info-label">Full Name</span>
+            <span class="info-value" id="info-val-name">Aarav Mehta</span>
+          </div>
+          <div class="info-group-view">
+            <span class="info-label">Email Address</span>
+            <span class="info-value" id="info-val-email">aarav.mehta@gmail.com</span>
+          </div>
+          <div class="info-group-view">
+            <span class="info-label">Membership Tier</span>
+            <span class="info-value text-gradient-teal" style="font-weight:700; background:linear-gradient(135deg, #22d3ee, #818cf8); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Premium Explorer</span>
+          </div>
+          <div class="info-group-view">
+            <span class="info-label">Location</span>
+            <span class="info-value">Chennai, India</span>
+          </div>
+          <div class="info-group-view">
+            <span class="info-label">Short Biography</span>
+            <p class="info-bio-text" style="color:var(--text-secondary); line-height:1.5; font-size:14px; margin-top:4px;">Passionate traveler who loves exploring South Indian heritage, ancient temples, coastal regions, and vibrant local cuisines!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Privacy Policy Dialog Modal -->
+    <div class="modal-overlay hidden" id="privacy-modal">
+      <div class="modal-sheet">
+        <header class="modal-header">
+          <h3>Privacy Policy</h3>
+          <button class="btn-modal-close" id="btn-privacy-close" aria-label="Close dialog">&times;</button>
+        </header>
+        <div class="modal-scroll-terms" style="max-height: 250px; overflow-y: auto; padding-right: 8px;">
+          <h4 style="margin-top:0; color:var(--text-primary);">1. TravelBuddy Security Commitment</h4>
+          <p style="color:var(--text-secondary); font-size:13px; line-height:1.4; margin-bottom:12px;">We respect your privacy and secure all active sessions. Your personalized planned trips, travel budgets, checklists, and luxury hotel queries are stored in encrypted databases.</p>
+          <h4 style="color:var(--text-primary);">2. Location & Navigation Guidelines</h4>
+          <p style="color:var(--text-secondary); font-size:13px; line-height:1.4; margin-bottom:12px;">We process standard geolocation search inputs strictly to generate local maps, directions, and current weather forecasts. Your exact coordinates are never shared with unauthorized third parties.</p>
+          <h4 style="color:var(--text-primary);">3. Community Sharing Disclosures</h4>
+          <p style="color:var(--text-secondary); font-size:13px; line-height:1.4; margin-bottom:0;">When you post a travel plan in our Community feed ("Trip Buddies"), you consent to display your traveler rating and destination details to other members who may request to join you.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. Help & Support Dialog Modal -->
+    <div class="modal-overlay hidden" id="support-modal">
+      <div class="modal-sheet">
+        <header class="modal-header">
+          <h3>Help & Support</h3>
+          <button class="btn-modal-close" id="btn-support-close" aria-label="Close dialog">&times;</button>
+        </header>
+        <form class="modal-form" id="support-request-form">
+          <div class="form-group">
+            <label class="form-label" for="support-category">Support Category</label>
+            <select class="modal-select-field" id="support-category" style="width:100%; padding:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; color:var(--text-primary); font-size:14px; outline:none;">
+              <option value="General Query" style="background:#1e293b;">General Query</option>
+              <option value="Trip Planning" style="background:#1e293b;">Trip Planning</option>
+              <option value="AI Assistant" style="background:#1e293b;">AI Assistant</option>
+              <option value="Bug / Crash Reports" style="background:#1e293b;">Bug / Crash Reports</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="support-message">Message Details</label>
+            <textarea class="modal-textarea" id="support-message" rows="3" placeholder="Describe your query or issue in detail..." required></textarea>
+          </div>
+          <button type="submit" class="btn-modal-submit" style="margin-top:12px;">Submit Ticket</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- 4. Reset Password Dialog Modal -->
+    <div class="modal-overlay hidden" id="reset-password-modal">
+      <div class="modal-sheet">
+        <header class="modal-header">
+          <h3>Reset Password</h3>
+          <button class="btn-modal-close" id="btn-reset-password-close" aria-label="Close dialog">&times;</button>
+        </header>
+        <form class="modal-form" id="reset-password-form">
+          <div class="form-group">
+            <label class="form-label" for="reset-val-email">Account Email</label>
+            <input type="text" class="modal-select-field" id="reset-val-email" readonly style="width:100%; padding:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; color:var(--text-primary); font-size:14px; outline:none;">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="reset-val-password">New Password</label>
+            <input type="password" class="modal-textarea" id="reset-val-password" placeholder="Enter new password (min 7 chars, 1 uppercase)" required style="height: auto; padding:12px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; color:var(--text-primary); font-size:14px; outline:none;">
+          </div>
+          <button type="submit" class="btn-modal-submit" style="margin-top:12px;">Confirm Reset</button>
+        </form>
+      </div>
+    </div>
+
+  <!-- 5. Hotel Booking Multi-Step Modal -->
+  <div class="modal-overlay hidden" id="hotel-booking-modal">
+    <div class="modal-sheet hotel-booking-sheet">
+      <header class="modal-header">
+        <div class="hotel-booking-header-info">
+          <span class="hotel-booking-step-badge" id="hotel-step-badge">Step 1 of 3</span>
+          <h3 id="hotel-booking-modal-title">Room Type</h3>
+        </div>
+        <button class="btn-modal-close" id="btn-hotel-booking-close" aria-label="Close">&times;</button>
+      </header>
+
+      <!-- Step Progress Bar -->
+      <div class="hotel-step-progress">
+        <div class="hotel-step-bar" id="hotel-step-bar" style="width: 33.33%"></div>
+      </div>
+
+      <!-- Hotel Name Display -->
+      <div class="hotel-booking-hotel-name-row">
+        <span class="hotel-booking-hotel-icon">🏨</span>
+        <span class="hotel-booking-hotel-name" id="hotel-booking-name-display">Hotel Name</span>
+      </div>
+
+      <!-- ── STEP 1: AC / Non-AC ── -->
+      <div class="hotel-booking-step" id="hotel-step-1">
+        <p class="hotel-booking-step-subtitle">Choose your preferred room type</p>
+        <div class="hotel-room-type-grid">
+          <button class="hotel-room-type-card selected" id="hotel-btn-ac" data-type="AC">
+            <div class="hotel-room-type-icon">❄️</div>
+            <span class="hotel-room-type-label">AC Room</span>
+            <span class="hotel-room-type-desc">Air-conditioned comfort</span>
+            <div class="hotel-room-check">✓</div>
+          </button>
+          <button class="hotel-room-type-card" id="hotel-btn-nonac" data-type="Non-AC">
+            <div class="hotel-room-type-icon">🌿</div>
+            <span class="hotel-room-type-label">Non-AC Room</span>
+            <span class="hotel-room-type-desc">Natural ventilation</span>
+            <div class="hotel-room-check">✓</div>
+          </button>
+        </div>
+        <div class="hotel-price-preview">
+          <span class="hotel-price-preview-lbl">Base Price</span>
+          <span class="hotel-price-preview-val" id="hotel-step1-price">₹0 / night</span>
+        </div>
+        <button class="btn-hotel-booking-next" id="hotel-step1-next">Continue →</button>
+      </div>
+
+      <!-- ── STEP 2: Days & People ── -->
+      <div class="hotel-booking-step hidden" id="hotel-step-2">
+        <p class="hotel-booking-step-subtitle">How long will you stay?</p>
+
+        <div class="hotel-booking-counter-group">
+          <div class="hotel-booking-counter-card">
+            <div class="hotel-counter-icon">📅</div>
+            <span class="hotel-counter-label">Nights</span>
+            <div class="hotel-counter-row">
+              <button class="hotel-counter-btn" id="hotel-days-minus">−</button>
+              <span class="hotel-counter-val" id="hotel-days-count">1</span>
+              <button class="hotel-counter-btn" id="hotel-days-plus">+</button>
+            </div>
+          </div>
+          <div class="hotel-booking-counter-card">
+            <div class="hotel-counter-icon">👥</div>
+            <span class="hotel-counter-label">Guests</span>
+            <div class="hotel-counter-row">
+              <button class="hotel-counter-btn" id="hotel-people-minus">−</button>
+              <span class="hotel-counter-val" id="hotel-people-count">1</span>
+              <button class="hotel-counter-btn" id="hotel-people-plus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Check-in date picker -->
+        <div class="hotel-booking-date-row">
+          <label class="hotel-booking-date-label">Check-in Date</label>
+          <input type="date" class="hotel-booking-date-input" id="hotel-checkin-date">
+        </div>
+
+        <!-- Live price summary -->
+        <div class="hotel-booking-summary-box" id="hotel-step2-summary">
+          <div class="hotel-summary-row">
+            <span>Room Type</span>
+            <span id="hotel-sum-type">AC</span>
+          </div>
+          <div class="hotel-summary-row">
+            <span>Nights × Guests</span>
+            <span id="hotel-sum-nights">1 × 1</span>
+          </div>
+          <div class="hotel-summary-row total-row">
+            <span>Total Amount</span>
+            <span id="hotel-sum-total" class="hotel-sum-total-val">₹0</span>
+          </div>
+        </div>
+
+        <div class="hotel-step-nav-row">
+          <button class="btn-hotel-booking-back" id="hotel-step2-back">← Back</button>
+          <button class="btn-hotel-booking-next" id="hotel-step2-next">Proceed to Pay →</button>
+        </div>
+      </div>
+
+      <!-- ── STEP 3: Payment ── -->
+      <div class="hotel-booking-step hidden" id="hotel-step-3">
+        <p class="hotel-booking-step-subtitle">Review & complete your booking</p>
+
+        <!-- Final Booking Summary Card -->
+        <div class="hotel-final-summary">
+          <div class="hotel-final-summary-row">
+            <span class="hfs-label">Hotel</span>
+            <span class="hfs-val" id="hfs-hotel-name">—</span>
+          </div>
+          <div class="hotel-final-summary-row">
+            <span class="hfs-label">Room Type</span>
+            <span class="hfs-val" id="hfs-room-type">—</span>
+          </div>
+          <div class="hotel-final-summary-row">
+            <span class="hfs-label">Check-in</span>
+            <span class="hfs-val" id="hfs-checkin">—</span>
+          </div>
+          <div class="hotel-final-summary-row">
+            <span class="hfs-label">Duration</span>
+            <span class="hfs-val" id="hfs-duration">—</span>
+          </div>
+          <div class="hotel-final-summary-row">
+            <span class="hfs-label">Guests</span>
+            <span class="hfs-val" id="hfs-guests">—</span>
+          </div>
+          <div class="hotel-final-summary-divider"></div>
+          <div class="hotel-final-summary-row grand-total-row">
+            <span class="hfs-label grand">Total Payable</span>
+            <span class="hfs-val grand" id="hfs-total">₹0</span>
+          </div>
+        </div>
+
+        <!-- Payment Method Selection -->
+        <div class="hotel-payment-method-section">
+          <p class="hotel-payment-method-title">Payment Method</p>
+          <div class="hotel-payment-methods">
+            <label class="hotel-payment-method-item selected" id="hotel-pay-razorpay-label">
+              <input type="radio" name="hotel-payment-method" value="razorpay" checked>
+              <span class="hotel-pm-icon">💳</span>
+              <span class="hotel-pm-name">Card / UPI / Netbanking</span>
+              <span class="hotel-pm-tag">Razorpay</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="hotel-step-nav-row">
+          <button class="btn-hotel-booking-back" id="hotel-step3-back">← Back</button>
+          <button class="btn-hotel-pay-now" id="hotel-pay-now-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            Pay Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Razorpay SDK -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <!-- JavaScript File -->
+  <script src="js/app.js?v=1.7.0"></script>
+
+</body>
+</html>
